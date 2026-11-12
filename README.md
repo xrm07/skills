@@ -1,9 +1,10 @@
 # skills
 
-コードや設計の理解を固め、日本語の説明を整える Agent Skills。
+コードや設計の理解、変更のレビュー、日本語の説明を支援する Agent Skills。
 
 | スキル | 用途 |
 |---|---|
+| [integrated-review](skills/integrated-review/SKILL.md) | 仕様・操作・データ・保守・運用を統合し、根拠と対応の優先度を示して変更をレビューする |
 | [comprehend](skills/comprehend/SKILL.md) | コード・変更・設計を調べ、説明と自由回答による確認で理解を固める |
 | [japanese-writing](skills/japanese-writing/SKILL.md) | 日本語文書の内容・構成・根拠を整える。他の文章作成・修正スキルによる完全代替・併用が可能 |
 
@@ -12,6 +13,7 @@
 必要なスキルを選んでインストールする。
 
 ```bash
+npx skills add xrm07/skills --skill integrated-review
 npx skills add xrm07/skills --skill comprehend
 npx skills add xrm07/skills --skill japanese-writing
 ```
@@ -19,6 +21,10 @@ npx skills add xrm07/skills --skill japanese-writing
 `comprehend` は説明指針を同梱しており、単独で導入できる。
 
 ## 使用例
+
+```text
+$integrated-review このPRをレビューして、マージ前に必要な対応と任意の改善を分けて。
+```
 
 ```text
 $comprehend src/main.rs の設計と成立条件の理解を固めたい
